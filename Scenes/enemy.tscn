@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://bltqc3vdr4lg5"]
+
+[ext_resource type="Script" path="res://Script/enemy.gd" id="1_kdtko"]
+[ext_resource type="Material" uid="uid://c6rokk4xfjd1o" path="res://Material/red.tres" id="2_336o3"]
+[ext_resource type="Script" path="res://Script/enemy_ui.gd" id="2_htd4t"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1i04j"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fsj6n"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6jgnf"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_q5n1r"]
+
+[node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
+script = ExtResource("1_kdtko")
+move_speed = 5.0
+initial_health = 45.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_1i04j")
+surface_material_override/0 = ExtResource("2_336o3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_fsj6n")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_6jgnf")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_htd4t")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI"]
+layout_mode = 0
+offset_left = -29.0
+offset_top = -45.0
+offset_right = 31.0
+offset_bottom = -30.0
+value = 100.0
+nine_patch_stretch = true
+texture_progress = SubResource("CanvasTexture_q5n1r")
+tint_under = Color(0, 0, 1, 1)
+tint_over = Color(0, 0, 1, 1)
+tint_progress = Color(0, 0, 1, 1)
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

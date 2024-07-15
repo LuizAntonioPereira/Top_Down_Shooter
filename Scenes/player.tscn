@@ -1,0 +1,68 @@
+[gd_scene load_steps=13 format=3 uid="uid://bb56b084d2tt5"]
+
+[ext_resource type="Script" path="res://Script/Player.gd" id="1_xao81"]
+[ext_resource type="Material" uid="uid://dbgchsh8nqv3c" path="res://Material/green.tres" id="2_yk3ho"]
+[ext_resource type="Script" path="res://Script/Weapon.gd" id="2_ynjvx"]
+[ext_resource type="PackedScene" uid="uid://ca2ecw7ochlhc" path="res://Scenes/bullet.tscn" id="3_l4ysw"]
+[ext_resource type="PackedScene" uid="uid://mbrmnmk37we6" path="res://Scenes/particles.tscn" id="5_uyx61"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_b8pws"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7dhl3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwb02"]
+albedo_color = Color(0, 0, 0, 1)
+backlight_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_7wak7"]
+size = Vector3(0.2, 0.2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uj0rp"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1rh4y"]
+size = Vector3(0.2, 0.4, 0.2)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vo6jj"]
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_xao81")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_b8pws")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_yk3ho")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_7dhl3")
+
+[node name="Weapon" type="Node3D" parent="." node_paths=PackedStringArray("shoot_position")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.0604171)
+script = ExtResource("2_ynjvx")
+bullet_prefab = ExtResource("3_l4ysw")
+shoot_position = NodePath("ShootPosition")
+shoot_rate = 0.2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Weapon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.10704)
+material_overlay = SubResource("StandardMaterial3D_rwb02")
+mesh = SubResource("BoxMesh_7wak7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Weapon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00134313, -0.104314, 0.631601)
+material_override = SubResource("StandardMaterial3D_uj0rp")
+mesh = SubResource("BoxMesh_1rh4y")
+
+[node name="ShootPosition" type="Node3D" parent="Weapon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.57467)
+
+[node name="Particles" parent="Weapon/ShootPosition" instance=ExtResource("5_uyx61")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42109e-14, 0, 0.562453)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_vo6jj")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
