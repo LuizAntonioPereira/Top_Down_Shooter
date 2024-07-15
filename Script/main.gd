@@ -4,6 +4,7 @@ extends Node3D
 var Sensitive = 2000
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	Global.death_enemy_count = 0
 	Global.level = 1
 

@@ -15,6 +15,7 @@ func _process(delta):
 		fade_in()
 	
 func fade_in():
+	await get_tree().create_timer(0.5).timeout
 	$"../AnimationPlayer".play("mission")
 	await get_tree().create_timer(2.6).timeout
 	$"../AnimationPlayer".play_backwards("mission")

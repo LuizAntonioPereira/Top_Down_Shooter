@@ -18,7 +18,7 @@ func _process(delta):
 	if shoot_timer < shoot_rate:
 		shoot_timer += delta
 	
-	if Input.is_action_pressed("shoot") and shoot_timer >= shoot_rate:		
+	if Input.is_action_pressed("shoot") and shoot_timer >= shoot_rate and Global.start_level == true:		
 		shoot_timer = 0		
 		var bullet = bullet_prefab.instantiate()
 		bullet.position = shoot_position.global_position
