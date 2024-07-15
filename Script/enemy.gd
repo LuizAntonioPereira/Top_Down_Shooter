@@ -9,8 +9,8 @@ var player : Node3D
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-var material_red = preload("res://Material/red.tres")
-var material_white = preload("res://Material/white.tres")
+var material_red = preload("res://Assets/Material/red.tres")
+var material_white = preload("res://Assets/Material/white.tres")
 
 @export
 var initial_health : float

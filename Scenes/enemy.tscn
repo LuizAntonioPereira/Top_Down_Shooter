@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bltqc3vdr4lg5"]
 
 [ext_resource type="Script" path="res://Script/enemy.gd" id="1_kdtko"]
-[ext_resource type="Material" uid="uid://c6rokk4xfjd1o" path="res://Material/red.tres" id="2_336o3"]
+[ext_resource type="Material" uid="uid://c6rokk4xfjd1o" path="res://Assets/Material/red.tres" id="2_6rnm0"]
 [ext_resource type="Script" path="res://Script/enemy_ui.gd" id="2_htd4t"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1i04j"]
@@ -20,7 +20,7 @@ initial_health = 45.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_1i04j")
-surface_material_override/0 = ExtResource("2_336o3")
+surface_material_override/0 = ExtResource("2_6rnm0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_fsj6n")

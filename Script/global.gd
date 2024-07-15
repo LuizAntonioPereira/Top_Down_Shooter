@@ -3,11 +3,8 @@ extends Node
 var reset : bool = false
 var death_enemy : bool = false
 var death_enemy_count = 0
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+var level = 1
+var next_mission : bool = false
+var start_level : bool = false
+var rate_current : float = 0.25 * level
+var value_mission : int = 10

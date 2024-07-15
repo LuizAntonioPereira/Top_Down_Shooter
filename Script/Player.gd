@@ -34,7 +34,8 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
-	move_and_slide()	
+	if Global.start_level == true:
+		move_and_slide()	
 	
 	$Weapon/ShootPosition/Particles.emitting = Global.death_enemy
 	

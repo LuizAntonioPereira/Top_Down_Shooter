@@ -1,42 +1,17 @@
-[gd_scene format=3 uid="uid://rye0fb030ao7"]
+[gd_scene load_steps=2 format=3 uid="uid://rye0fb030ao7"]
 
-[node name="Menu" type="HBoxContainer"]
+[ext_resource type="Script" path="res://Script/language.gd" id="1_fenlq"]
+
+[node name="Language" type="HBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
-y_sort_enabled = true
-layout_mode = 2
-size_flags_horizontal = 3
-expand_mode = 1
-stretch_mode = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer"]
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 55.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 9
-theme_override_font_sizes/font_size = 40
-text = "l_name"
-horizontal_alignment = 1
-vertical_alignment = 1
+script = ExtResource("1_fenlq")
+metadata/_edit_horizontal_guides_ = [18.0, 155.0]
 
 [node name="VSeparator2" type="VSeparator" parent="."]
 layout_mode = 2
@@ -49,22 +24,26 @@ alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "b_start"
+text = "b_pt"
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "b_language"
+text = "b_en"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "credito"
+text = "b_es"
 
 [node name="VSeparator" type="VSeparator" parent="."]
 layout_mode = 2
 size_flags_horizontal = 10
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="pt_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="en_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="es_pressed"]

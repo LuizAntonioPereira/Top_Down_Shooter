@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwfctxmplp8th"]
+[gd_scene load_steps=8 format=3 uid="uid://bwfctxmplp8th"]
 
 [ext_resource type="PackedScene" uid="uid://dsgu25ucupnfy" path="res://Scenes/map.tscn" id="1_fp2pl"]
 [ext_resource type="Script" path="res://Script/main.gd" id="1_mafxn"]
 [ext_resource type="PackedScene" uid="uid://bb56b084d2tt5" path="res://Scenes/player.tscn" id="2_7sxds"]
 [ext_resource type="PackedScene" uid="uid://wdw6etg6d0g0" path="res://Scenes/spawnner_generation.tscn" id="2_ou71m"]
 [ext_resource type="PackedScene" uid="uid://p1ommiy7gng2" path="res://Scenes/spring_arm_3d.tscn" id="4_uwh4j"]
+[ext_resource type="PackedScene" uid="uid://drfmb2djyaxb8" path="res://Scenes/UI_scene.tscn" id="7_lahit"]
 [ext_resource type="PackedScene" uid="uid://bltqc3vdr4lg5" path="res://Scenes/enemy.tscn" id="7_n74ww"]
 
 [node name="main" type="Node3D"]
@@ -26,3 +27,5 @@ player = NodePath("../Player")
 enemy_prefab = ExtResource("7_n74ww")
 root_node = NodePath("..")
 shoot_rate = 2.0
+
+[node name="UI_scene" parent="." instance=ExtResource("7_lahit")]

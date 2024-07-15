@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://bb56b084d2tt5"]
 
 [ext_resource type="Script" path="res://Script/Player.gd" id="1_xao81"]
-[ext_resource type="Material" uid="uid://dbgchsh8nqv3c" path="res://Material/green.tres" id="2_yk3ho"]
+[ext_resource type="Material" uid="uid://dbgchsh8nqv3c" path="res://Assets/Material/green.tres" id="2_a3oxn"]
 [ext_resource type="Script" path="res://Script/Weapon.gd" id="2_ynjvx"]
 [ext_resource type="PackedScene" uid="uid://ca2ecw7ochlhc" path="res://Scenes/bullet.tscn" id="3_l4ysw"]
 [ext_resource type="PackedScene" uid="uid://mbrmnmk37we6" path="res://Scenes/particles.tscn" id="5_uyx61"]
@@ -31,7 +31,7 @@ script = ExtResource("1_xao81")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_b8pws")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("2_yk3ho")
+surface_material_override/0 = ExtResource("2_a3oxn")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_7dhl3")

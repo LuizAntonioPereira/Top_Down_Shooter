@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=3 uid="uid://dsgu25ucupnfy"]
 
-[ext_resource type="Material" uid="uid://h48ilhhyj56l" path="res://Material/floor.tres" id="1_7drfk"]
-[ext_resource type="Material" uid="uid://bhgxkx1a3c8c5" path="res://Material/pink.tres" id="2_afeag"]
-[ext_resource type="Material" uid="uid://vlui4ykfxie7" path="res://Material/orange.tres" id="3_d24kf"]
-[ext_resource type="Material" uid="uid://dkrdll3ki127c" path="res://Material/black.tres" id="4_s0fru"]
+[ext_resource type="Material" uid="uid://h48ilhhyj56l" path="res://Assets/Material/floor.tres" id="1_rlc46"]
+[ext_resource type="Material" uid="uid://bhgxkx1a3c8c5" path="res://Assets/Material/pink.tres" id="2_ykpmq"]
+[ext_resource type="Material" uid="uid://vlui4ykfxie7" path="res://Assets/Material/orange.tres" id="3_u7aon"]
+[ext_resource type="Material" uid="uid://dkrdll3ki127c" path="res://Assets/Material/black.tres" id="4_ggrwc"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_384el"]
 vertices = PackedVector3Array(-23.75, 0.4, -14.25, -17.75, 0.4, -14.25, -17.75, 0.4, -15, -23.75, 0.4, -14.25, -17.75, 0.4, -15, -16.5, 0.4, -15.5, -16.5, 0.4, -23.75, -23.75, 0.4, -23.75, -1, 0.4, -13.75, 0.75, 0.4, -13.75, 0.25, 0.4, -14.25, -1, 0.4, -13.75, 0.25, 0.4, -14.25, 0.25, 0.4, -15.75, 0.25, 0.4, -15.75, 1.5, 0.4, -16, 1.5, 0.4, -23.75, -16.5, 0.4, -23.75, -16.5, 0.4, -15.5, -15.5, 0.4, -15, -1, 0.4, -13.75, 0.25, 0.4, -15.75, 1.5, 0.4, -23.75, -15.5, 0.4, -15, -15.5, 0.4, -13.75, -1, 0.4, -13.75, 2.5, 0.4, -14.25, 1.75, 0.4, -13.75, 2.5, 0.4, -12.5, 20.25, 0.4, -3.5, 20.5, 0.4, -4, 22, 0.4, -4, 22.5, 0.4, -2.75, 23.75, 0.4, -2.75, 23.75, 0.4, -23.75, 1.5, 0.4, -23.75, 1.5, 0.4, -16, 2.5, 0.4, -15.75, 2.5, 0.4, -15.75, 2.5, 0.4, -14.25, 20.5, 0.4, -4, 20.5, 0.4, -4, 22, 0.4, -4, 23.75, 0.4, -23.75, 1.5, 0.4, -23.75, 2.5, 0.4, -15.75, -17.25, 0.4, -13.25, -17.75, 0.4, -14.25, -23.75, 0.4, -14.25, -23.75, 0.4, 17.25, -16.75, 0.4, 17.25, -16.25, 0.4, 16.25, -16.25, 0.4, 16.25, -14.75, 0.4, 16.25, -15.75, 0.4, -13.25, -17.25, 0.4, -13.25, -1, 0.4, -13.75, -15.5, 0.4, -13.75, -15.75, 0.4, -13.25, -14.75, 0.4, 16.25, -14.5, 0.4, 16.75, 2.5, 0.4, -12.5, 1.75, 0.4, -13.75, 0.75, 0.4, -13.75, 2.5, 0.4, -12.5, 0.75, 0.4, -13.75, -1, 0.4, -13.75, 13.25, 0.4, 24.25, 13.25, 0.4, 18.75, 12.25, 0.4, 18.25, -14.5, 0.4, 18, -15.5, 0.4, 18.5, -15.5, 0.4, 24.25, 12.25, 0.4, 17, 2.5, 0.4, -12.5, -1, 0.4, -13.75, -14.5, 0.4, 16.75, -14.5, 0.4, 18, 12.25, 0.4, 18.25, 23.75, 0.4, -2.75, 22.5, 0.4, -2.75, 22, 0.4, -1.75, 23.75, 0.4, 16.5, 12.5, 0.4, 16.5, 14, 0.4, 16.5, 20.25, 0.4, -2.25, 23.75, 0.4, 16.5, 22, 0.4, -1.75, 20.75, 0.4, -1.75, 23.75, 0.4, 16.5, 20.75, 0.4, -1.75, 20.25, 0.4, -2.25, 14, 0.4, 16.5, 20.25, 0.4, -2.25, 20.25, 0.4, -3.5, 2.5, 0.4, -12.5, 12.25, 0.4, 17, 12.5, 0.4, 16.5, 14.5, 0.4, 18.25, 13.25, 0.4, 18.75, 13.25, 0.4, 24.25, 23.75, 0.4, 24.25, 23.75, 0.4, 16.5, 23.75, 0.4, 16.5, 14, 0.4, 16.5, 14.5, 0.4, 17, 23.75, 0.4, 16.5, 14.5, 0.4, 17, 14.5, 0.4, 18.25, -15.5, 0.4, 24.25, -15.5, 0.4, 18.5, -16.75, 0.4, 17.75, -23.75, 0.4, 17.25, -23.75, 0.4, 24.25, -16.75, 0.4, 17.75, -16.75, 0.4, 17.25, -23.75, 0.4, 17.25)
@@ -51,7 +51,7 @@ navigation_mesh = SubResource("NavigationMesh_384el")
 [node name="Floor" type="MeshInstance3D" parent="NavigationRegion3D"]
 mesh = SubResource("BoxMesh_viks2")
 skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("1_7drfk")
+surface_material_override/0 = ExtResource("1_rlc46")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floor"]
 
@@ -62,7 +62,7 @@ shape = SubResource("BoxShape3D_fxahx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.660005, -24.3183)
 mesh = SubResource("BoxMesh_vktve")
 skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("1_7drfk")
+surface_material_override/0 = ExtResource("1_rlc46")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Wall"]
 
@@ -73,7 +73,7 @@ shape = SubResource("BoxShape3D_2hg8i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.660005, 25.0166)
 mesh = SubResource("BoxMesh_vktve")
 skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("1_7drfk")
+surface_material_override/0 = ExtResource("1_rlc46")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Wall2"]
 
@@ -84,7 +84,7 @@ shape = SubResource("BoxShape3D_fujug")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 24.4423, 0.660005, 0.0882281)
 mesh = SubResource("BoxMesh_vktve")
 skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("1_7drfk")
+surface_material_override/0 = ExtResource("1_rlc46")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Wall3"]
 
@@ -95,7 +95,7 @@ shape = SubResource("BoxShape3D_ykas0")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24.3479, 0.660005, 0.149295)
 mesh = SubResource("BoxMesh_vktve")
 skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("1_7drfk")
+surface_material_override/0 = ExtResource("1_rlc46")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Wall4"]
 
@@ -105,7 +105,7 @@ shape = SubResource("BoxShape3D_8ne75")
 [node name="Barrier" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.36, 1, -2.936)
 mesh = SubResource("CylinderMesh_jij3i")
-surface_material_override/0 = ExtResource("2_afeag")
+surface_material_override/0 = ExtResource("2_ykpmq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Barrier"]
 
@@ -115,7 +115,7 @@ shape = SubResource("CylinderShape3D_ewhce")
 [node name="Barrier2" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5917, 1, -14.3575)
 mesh = SubResource("CylinderMesh_jij3i")
-surface_material_override/0 = ExtResource("3_d24kf")
+surface_material_override/0 = ExtResource("3_u7aon")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Barrier2"]
 
@@ -125,7 +125,7 @@ shape = SubResource("CylinderShape3D_elbcl")
 [node name="Barrier3" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5071, 1.2, 17.2692)
 mesh = SubResource("CylinderMesh_jij3i")
-surface_material_override/0 = ExtResource("2_afeag")
+surface_material_override/0 = ExtResource("2_ykpmq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Barrier3"]
 
@@ -135,7 +135,7 @@ shape = SubResource("CylinderShape3D_3v0v4")
 [node name="Barrier4" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35636, 1.2, -14.977)
 mesh = SubResource("CylinderMesh_jij3i")
-surface_material_override/0 = ExtResource("4_s0fru")
+surface_material_override/0 = ExtResource("4_ggrwc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Barrier4"]
 
@@ -145,7 +145,7 @@ shape = SubResource("CylinderShape3D_jsdkc")
 [node name="Barrier5" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3345, 1.2, 17.5417)
 mesh = SubResource("CylinderMesh_jij3i")
-surface_material_override/0 = ExtResource("3_d24kf")
+surface_material_override/0 = ExtResource("3_u7aon")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Barrier5"]
 
