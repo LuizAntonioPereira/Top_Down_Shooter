@@ -14,6 +14,9 @@ var shoot_timer : float
 const particule_scene = preload("res://Scenes/particles.tscn")
 
 func _process(delta):
+	shoot(delta)
+		
+func shoot(delta):	
 	
 	if shoot_timer < shoot_rate:
 		shoot_timer += delta

@@ -23,4 +23,4 @@ mesh = SubResource("SphereMesh_j6kas")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_qx0ig")
 
-[node name="Timer" type="Timer" parent="."]
+[connection signal="body_entered" from="Area3D" to="." method="body_entered"]

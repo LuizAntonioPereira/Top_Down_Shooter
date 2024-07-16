@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export
-var move_speed : float
+var move_speed : float = 4
 
 @onready var agent := $NavigationAgent3D as NavigationAgent3D
 
@@ -13,15 +13,16 @@ var material_red = preload("res://Assets/Material/red.tres")
 var material_white = preload("res://Assets/Material/white.tres")
 
 @export
-var initial_health : float
-
+var initial_health : float = 45
+@export
 var current_health : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	current_health = initial_health
+	move_speed = move_speed + (1 * Global.level)
+	initial_health = initial_health + (1 * Global.level)	
 	$UI/TextureProgressBar.max_value = current_health
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -44,7 +45,6 @@ func name(delta):
 		
 	if current_health < 4:		
 		Global.death_enemy = true
-
 				
 	if not is_on_floor():
 		velocity.y -= gravity * delta

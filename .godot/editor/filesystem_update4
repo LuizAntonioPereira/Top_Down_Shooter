@@ -17,3 +17,7 @@ res://Script/main.gd
 res://Script/enemy.gd
 res://Script/global.gd
 res://Script/SpawnerGeneration.gd
+res://Script/bullet.gd
+res://Script/language.gd
+res://Script/Weapon.gd
+res://Scenes/bullet.tscn

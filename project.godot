@@ -53,7 +53,7 @@ shoot={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://Assets/Traducoes/language_top.en_US.translation", "res://Assets/Traducoes/language_top.es_ES.translation", "res://Assets/Traducoes/language_top.pt_BR.translation")
+locale/translations=PackedStringArray("res://Assets/Traducoes/language_top.es_ES.translation", "res://Assets/Traducoes/language_top.pt_BR.translation")
 
 [rendering]
 

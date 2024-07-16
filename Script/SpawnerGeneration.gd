@@ -11,13 +11,12 @@ var shoot_rate : float = 2.25 - (Global.rate_current * Global.level)
 
 var shoot_timer : float
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	spawner(delta)
+		
+func spawner(delta):
+	
 	if shoot_timer < shoot_rate:
 		shoot_timer += delta
 	
@@ -25,6 +24,6 @@ func _process(delta):
 		shoot_timer = 0
 	
 		var enemy = enemy_prefab.instantiate()
-		var rand_angle = randf_range(0, PI * 3)
+		var rand_angle = randf_range(0, PI * 2)
 		enemy.position = global_position + (Vector3.RIGHT * (sin(rand_angle)/1.5) + Vector3.FORWARD * (cos(rand_angle))/1.5) * 20
 		root_node.add_child(enemy)

@@ -7,12 +7,16 @@ var bullet_direction : Vector3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Timer.connect("timeout", queue_free)
-	$Timer.set_wait_time(2.5)
-	$Timer.start()
+	await get_tree().create_timer(0.9).timeout
+	queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position -= bullet_direction * bullet_speed * delta
 	pass
+
+
+func body_entered(body):
+	if body.is_in_group("Enemy"):
+		queue_free()

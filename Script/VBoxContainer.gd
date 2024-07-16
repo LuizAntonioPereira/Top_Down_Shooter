@@ -17,10 +17,10 @@ func _process(delta):
 	$HBoxContainer/Label5.text = str(Global.value_mission)
 	
 func fade_in():
+	Global.next_mission = false
 	await get_tree().create_timer(1.0).timeout
 	$"../AnimationPlayer".play("mission")
 	await get_tree().create_timer(2.6).timeout
 	$"../AnimationPlayer".play_backwards("mission")
-	await get_tree().create_timer(2.3).timeout
-	Global.next_mission = false
+	await get_tree().create_timer(2.3).timeout	
 	Global.start_level = true

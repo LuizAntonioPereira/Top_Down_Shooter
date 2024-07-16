@@ -32,4 +32,4 @@ func mission():
 	Global.start_level = false		
 	Global.next_mission = true
 	Global.level += 1
-	Global.value_mission = Global.value_mission * Global.level
+	Global.value_mission = 10 * Global.level

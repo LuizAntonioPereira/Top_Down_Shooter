@@ -15,8 +15,6 @@
 [node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
 script = ExtResource("1_kdtko")
-move_speed = 5.0
-initial_health = 45.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_1i04j")

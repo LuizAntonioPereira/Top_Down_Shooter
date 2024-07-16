@@ -4,14 +4,6 @@ var data = ""
 var save_path = SAVE_DIR + "idioma.dat"
 const SAVE_DIR = "user://idioma/"
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func pt_pressed():
 	data = "pt_BR"
 	TranslationServer.set_locale(data)	
