@@ -1,5 +1,3 @@
-res://Scenes/SceneTransition.tscn
-res://Script/SceneTransition.gd
 res://Scenes/menu.tscn
 res://Scenes/map.tscn
 res://Scenes/main.tscn
@@ -8,9 +6,14 @@ res://Scenes/particles.tscn
 res://Scenes/enemy.tscn
 res://Scenes/language.tscn
 res://Scenes/UI_scene.tscn
-res://Script/main.gd
-res://Script/menu.gd
+res://Scenes/SceneTransition.tscn
 res://Scenes/spawnner_generation.tscn
 res://Script/VBoxContainer.gd
-res://Script/enemy_ui.gd
-res://Script/Weapon.gd
+res://Scenes/canvas_layer.tscn
+res://Assets/Traducoes/language_top.pt_BR.translation
+res://Assets/Traducoes/language_top.en_US.translation
+res://Assets/Traducoes/language_top.es_ES.translation
+res://Script/main.gd
+res://Script/enemy.gd
+res://Script/global.gd
+res://Script/SpawnerGeneration.gd

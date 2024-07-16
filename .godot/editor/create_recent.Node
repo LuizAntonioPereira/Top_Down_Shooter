@@ -1,9 +1,10 @@
+Label
+VBoxContainer
 Node
 CanvasModulate
 ColorRect
 CanvasLayer
 AnimationPlayer
-VBoxContainer
 HBoxContainer
 SpringArm3D
 Timer
@@ -12,4 +13,3 @@ MeshInstance3D
 Camera3D
 StaticBody3D
 DirectionalLight3D
-NavigationRegion3D

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dige6fucwurk8"
+
+[deps]
+
+files=["res://Assets/Traducoes/language_top.pt_BR.translation", "res://Assets/Traducoes/language_top.en_US.translation", "res://Assets/Traducoes/language_top.es_ES.translation"]
+
+source_file="res://Assets/Traducoes/language_top.csv"
+dest_files=["res://Assets/Traducoes/language_top.pt_BR.translation", "res://Assets/Traducoes/language_top.en_US.translation", "res://Assets/Traducoes/language_top.es_ES.translation"]
+
+[params]
+
+compress=true
+delimiter=0

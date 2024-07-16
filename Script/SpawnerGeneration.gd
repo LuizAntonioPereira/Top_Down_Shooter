@@ -7,7 +7,7 @@ var enemy_prefab : PackedScene
 var root_node : Node3D
 
 @export
-var shoot_rate : float = 2.25 - Global.rate_current
+var shoot_rate : float = 2.25 - (Global.rate_current * Global.level)
 
 var shoot_timer : float
 
