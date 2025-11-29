@@ -18,4 +18,3 @@ func destroy_transition():
 	
 func fade_in():
 	$Animation.play("FadeOut")
-

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bwfctxmplp8th"]
 
 [ext_resource type="PackedScene" uid="uid://dsgu25ucupnfy" path="res://Scenes/map.tscn" id="1_fp2pl"]
-[ext_resource type="Script" path="res://Script/main.gd" id="1_mafxn"]
+[ext_resource type="Script" uid="uid://6puclu4ugwse" path="res://Script/main.gd" id="1_mafxn"]
 [ext_resource type="PackedScene" uid="uid://bb56b084d2tt5" path="res://Scenes/player.tscn" id="2_7sxds"]
 [ext_resource type="PackedScene" uid="uid://wdw6etg6d0g0" path="res://Scenes/spawnner_generation.tscn" id="2_ou71m"]
 [ext_resource type="PackedScene" uid="uid://p1ommiy7gng2" path="res://Scenes/spring_arm_3d.tscn" id="4_uwh4j"]
@@ -29,3 +29,16 @@ root_node = NodePath("..")
 shoot_rate = 2.0
 
 [node name="UI_scene" parent="." instance=ExtResource("7_lahit")]
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_scene"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30

@@ -11,6 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var material_red = preload("res://Assets/Material/red.tres")
 var material_white = preload("res://Assets/Material/white.tres")
+var parte = preload("res://Scenes/particles.tscn")
 
 @export
 var initial_health : float = 45
@@ -32,16 +33,29 @@ func _on_area_3d_area_entered(area):
 	
 	if area.is_in_group("Bullet"):
 		current_health -= 10
-		$MeshInstance3D.set_surface_override_material(0,material_white)
-		await get_tree().create_timer(0.1).timeout
+		$UI/Label.text = "10"				
+		$MeshInstance3D.set_surface_override_material(0,material_white)		
+		#$UI/Label.text = ""		
+		await get_tree().create_timer(0.1).timeout		
 		$MeshInstance3D.set_surface_override_material(0,material_red)
 		$UI/TextureProgressBar.value = current_health
+		$UI/Label.scale.x = 1.3
+		$UI/Label.position.x = (-16.0)
+		await get_tree().create_timer(0.3).timeout
+		$UI/Label.text = ""
+		$UI/Label.scale.x = 1.0
+		$UI/Label.position.x = (-12.0)
+		
+				
 			
 func name(delta):
 	
 	if current_health <= 0:		
-		Global.death_enemy_count += 1						
-		queue_free()
+		Global.death_enemy_count += 1								
+		var part = parte.instantiate()
+		part.position = position
+		get_node("/root").add_child(part)
+		queue_free()		
 		
 	if current_health < 4:		
 		Global.death_enemy = true
@@ -52,7 +66,7 @@ func name(delta):
 	if player == null:
 		player = get_tree().get_first_node_in_group("Player")
 		
-	if player != null and Global.start_level == true:
+	if player != null and Global.start_level == true and Global.death_player != true:
 		agent.set_target_position(player.global_position)		
 		velocity = global_position.direction_to(agent.get_next_path_position()) * move_speed		
 		move_and_slide()

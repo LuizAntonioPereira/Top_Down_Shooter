@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://df45ii58hfasm"]
 
-[ext_resource type="Script" path="res://Script/SceneTransition.gd" id="1_m13a5"]
-[ext_resource type="Shader" path="res://Scenes/SceneTransition.gdshader" id="2_syebh"]
+[ext_resource type="Script" uid="uid://nprsfo7af1w8" path="res://Script/SceneTransition.gd" id="1_m13a5"]
+[ext_resource type="Shader" uid="uid://bxtej00rbmnhj" path="res://Scenes/SceneTransition.gdshader" id="2_syebh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nti38"]
 shader = ExtResource("2_syebh")
@@ -89,8 +89,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pcp7t"]
 _data = {
-"FadeOut": SubResource("1"),
-"RESET": SubResource("2")
+&"FadeOut": SubResource("1"),
+&"RESET": SubResource("2")
 }
 
 [node name="SceneTransition" type="CanvasLayer"]
@@ -106,5 +106,5 @@ color = Color(1, 1, 1, 0)
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_pcp7t")
+&"": SubResource("AnimationLibrary_pcp7t")
 }

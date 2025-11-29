@@ -7,22 +7,29 @@ var enemy_prefab : PackedScene
 var root_node : Node3D
 
 @export
+var init_spawner : bool = false
+
+@export
 var shoot_rate : float = 2.25 - (Global.rate_current * Global.level)
 
 var shoot_timer : float
 
+var count_enemy : int = 0
+
 
 func _process(delta):
-	spawner(delta)
+	if Global.start_level == true:
+		spawner(delta)
 		
 func spawner(delta):
 	
 	if shoot_timer < shoot_rate:
 		shoot_timer += delta
 	
-	if shoot_timer >= shoot_rate and Global.start_level == true:
+	if shoot_timer >= shoot_rate and Global.start_level == true and Global.value_mission > count_enemy and Global.death_player != true :
 		shoot_timer = 0
-	
+		count_enemy += 1
+			
 		var enemy = enemy_prefab.instantiate()
 		var rand_angle = randf_range(0, PI * 2)
 		enemy.position = global_position + (Vector3.RIGHT * (sin(rand_angle)/1.5) + Vector3.FORWARD * (cos(rand_angle))/1.5) * 20

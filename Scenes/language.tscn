@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://rye0fb030ao7"]
+[gd_scene load_steps=8 format=3 uid="uid://rye0fb030ao7"]
 
-[ext_resource type="Script" path="res://Script/language.gd" id="1_fenlq"]
+[ext_resource type="Script" uid="uid://d1m4toq3ueu7" path="res://Script/language.gd" id="1_fenlq"]
+[ext_resource type="FontFile" uid="uid://4p7lqd7tk8q8" path="res://Assets/Font/Oswald-VariableFont_wght.ttf" id="2_1hcow"]
+[ext_resource type="StyleBox" uid="uid://btg14ot58goa5" path="res://style/Normal.tres" id="3_lywip"]
+[ext_resource type="AudioStream" uid="uid://bnep5gsq7j227" path="res://Assets/Sons/click_003.ogg" id="4_t0eds"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t0eds"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hwg60"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aj51c"]
 
 [node name="Language" type="HBoxContainer"]
 anchors_preset = 15
@@ -39,7 +48,8 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 9
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("2_1hcow")
+theme_override_font_sizes/font_size = 50
 text = "l_name"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -55,25 +65,52 @@ alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1hcow")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("3_lywip")
 text = "b_pt"
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_t0eds")
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1hcow")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("3_lywip")
 text = "b_en"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_hwg60")
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1hcow")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("3_lywip")
 text = "b_es"
 
 [node name="VSeparator" type="VSeparator" parent="."]
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_aj51c")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -3
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.211765, 0.682353, 0.290196, 1)
+
+[node name="SonsMenu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_t0eds")
+bus = &"EFFECT"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="pt_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="en_pressed"]

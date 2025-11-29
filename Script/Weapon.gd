@@ -11,7 +11,7 @@ var shoot_rate : float
 
 var shoot_timer : float
 
-const particule_scene = preload("res://Scenes/particles.tscn")
+#const particule_scene = preload("res://Scenes/particles.tscn")
 
 func _process(delta):
 	shoot(delta)
@@ -27,4 +27,3 @@ func shoot(delta):
 		bullet.position = shoot_position.global_position
 		get_node("/root").add_child(bullet)
 		bullet.bullet_direction = -get_global_transform().basis.z
-

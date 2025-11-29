@@ -37,11 +37,11 @@ func _physics_process(delta):
 	if Global.start_level == true:
 		move_and_slide()	
 	
-	$Weapon/ShootPosition/Particles.emitting = Global.death_enemy
+	#$Weapon/ShootPosition/Particles.emitting = Global.death_enemy
 	
-	if Global.death_enemy == true:
-		await get_tree().create_timer(0.1).timeout
-		Global.death_enemy = false
+	#if Global.death_enemy == true:
+	#	await get_tree().create_timer(0.1).timeout
+	#	Global.death_enemy = false
 	
 func _on_area_3d_body_entered(body):
 	if body.is_in_group("Enemy"):
@@ -51,6 +51,5 @@ func _on_area_3d_body_entered(body):
 			$Weapon.queue_free()
 		
 		if get_node_or_null("MeshInstance3D") != null:
+			Global.death_player = true
 			$MeshInstance3D.queue_free()
-
-

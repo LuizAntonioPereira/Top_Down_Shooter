@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://drfmb2djyaxb8"]
+[gd_scene load_steps=8 format=3 uid="uid://drfmb2djyaxb8"]
 
-[ext_resource type="Script" path="res://Script/VBoxContainer.gd" id="1_4iun5"]
+[ext_resource type="Script" uid="uid://crqisl0kblhly" path="res://Script/VBoxContainer.gd" id="1_4iun5"]
+[ext_resource type="FontFile" uid="uid://4p7lqd7tk8q8" path="res://Assets/Font/Oswald-VariableFont_wght.ttf" id="2_r2wxn"]
+[ext_resource type="Texture2D" uid="uid://cq80vmijopx2g" path="res://Assets/Sprite/bar_square_gloss_large.png" id="2_x4t1a"]
+[ext_resource type="StyleBox" uid="uid://btg14ot58goa5" path="res://style/Normal.tres" id="4_heutk"]
 
 [sub_resource type="Animation" id="Animation_85eel"]
 length = 0.001
@@ -28,17 +31,16 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
-tracks/2/type = "value"
+tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("VBoxContainer/HBoxContainer2/Node/ColorRect:color")
+tracks/2/path = NodePath("VBoxContainer/HBoxContainer2/Node/NinePatchRect:modulate:a")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.364706, 0.364706, 0.364706, 0)]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="Animation" id="Animation_shtro"]
@@ -68,27 +70,28 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/2/type = "value"
+tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("VBoxContainer/HBoxContainer2/Node/ColorRect:color")
+tracks/2/path = NodePath("VBoxContainer/HBoxContainer2/Node/NinePatchRect:modulate:a")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.364706, 0.364706, 0.364706, 0), Color(0.364706, 0.364706, 0.364706, 1)]
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_81yxa"]
 _data = {
-"RESET": SubResource("Animation_85eel"),
-"mission": SubResource("Animation_shtro")
+&"RESET": SubResource("Animation_85eel"),
+&"mission": SubResource("Animation_shtro")
 }
 
 [node name="UI_scene" type="CanvasLayer"]
 layer = -2
+metadata/_edit_horizontal_guides_ = [515.0, 605.0, 512.0]
+metadata/_edit_vertical_guides_ = [0.0]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = -1
@@ -112,7 +115,8 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 9
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("2_r2wxn")
+theme_override_font_sizes/font_size = 50
 text = "l_text"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -123,7 +127,8 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 9
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("2_r2wxn")
+theme_override_font_sizes/font_size = 50
 vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="VBoxContainer/HBoxContainer"]
@@ -132,7 +137,8 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 9
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("2_r2wxn")
+theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -148,7 +154,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 9
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_r2wxn")
+theme_override_font_sizes/font_size = 35
 text = "l_level
 "
 horizontal_alignment = 1
@@ -161,7 +168,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 9
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("2_r2wxn")
+theme_override_font_sizes/font_size = 30
 text = "l_mission
 "
 horizontal_alignment = 1
@@ -169,24 +177,56 @@ vertical_alignment = 1
 
 [node name="Node" type="Node" parent="VBoxContainer/HBoxContainer2"]
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer2/Node"]
-custom_minimum_size = Vector2(0, 90)
-anchors_preset = -1
-anchor_top = 0.877
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/HBoxContainer2/Node"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -53.296
-offset_bottom = -43.0
+offset_top = -132.0
+offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 0
-size_flags_vertical = 3
-color = Color(0.364706, 0.364706, 0.364706, 0)
+texture = ExtResource("2_x4t1a")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="VBoxContainer2" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+visible = false
+z_index = 1
+offset_left = 1.0
+offset_top = 224.0
+offset_right = 1153.0
+offset_bottom = 299.0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("2_r2wxn")
+theme_override_font_sizes/font_size = 50
+text = "l_over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer2"]
+visible = false
+offset_left = 471.0
+offset_top = 316.0
+offset_right = 691.0
+offset_bottom = 396.0
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_r2wxn")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("4_heutk")
+text = "n_game"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_81yxa")
+&"": SubResource("AnimationLibrary_81yxa")
 }
+
+[connection signal="pressed" from="VBoxContainer2/Button" to="VBoxContainer" method="_on_button_pressed"]

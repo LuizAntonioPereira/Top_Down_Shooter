@@ -21,8 +21,12 @@ func _process(delta):
 
 
 func start():
+	$SonsLanguage.play()
+	await $SonsLanguage.finished
 	var scene = transition.instantiate()
 	get_node("/root").add_child(scene)	
 
 func language():
+	$SonsLanguage.play()
+	await $SonsLanguage.finished
 	get_tree().change_scene_to_file("res://Scenes/language.tscn")

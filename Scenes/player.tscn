@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bb56b084d2tt5"]
+[gd_scene load_steps=12 format=3 uid="uid://bb56b084d2tt5"]
 
-[ext_resource type="Script" path="res://Script/Player.gd" id="1_xao81"]
+[ext_resource type="Script" uid="uid://m2g0ksdtkjeh" path="res://Script/Player.gd" id="1_xao81"]
 [ext_resource type="Material" uid="uid://dbgchsh8nqv3c" path="res://Assets/Material/green.tres" id="2_a3oxn"]
-[ext_resource type="Script" path="res://Script/Weapon.gd" id="2_ynjvx"]
+[ext_resource type="Script" uid="uid://cp3lvsr3ab6wu" path="res://Script/Weapon.gd" id="2_ynjvx"]
 [ext_resource type="PackedScene" uid="uid://ca2ecw7ochlhc" path="res://Scenes/bullet.tscn" id="3_l4ysw"]
-[ext_resource type="PackedScene" uid="uid://mbrmnmk37we6" path="res://Scenes/particles.tscn" id="5_uyx61"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_b8pws"]
 
@@ -55,9 +54,6 @@ mesh = SubResource("BoxMesh_1rh4y")
 
 [node name="ShootPosition" type="Node3D" parent="Weapon"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.57467)
-
-[node name="Particles" parent="Weapon/ShootPosition" instance=ExtResource("5_uyx61")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42109e-14, 0, 0.562453)
 
 [node name="Area3D" type="Area3D" parent="."]
 

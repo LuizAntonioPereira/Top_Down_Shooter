@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4rc70nny5hvg"]
+[gd_scene load_steps=9 format=3 uid="uid://b4rc70nny5hvg"]
 
-[ext_resource type="Script" path="res://Script/menu.gd" id="1_2nani"]
+[ext_resource type="Script" uid="uid://c3hjgndro6dws" path="res://Script/menu.gd" id="1_2nani"]
+[ext_resource type="FontFile" uid="uid://4p7lqd7tk8q8" path="res://Assets/Font/Oswald-VariableFont_wght.ttf" id="2_c3a5m"]
+[ext_resource type="StyleBox" uid="uid://btg14ot58goa5" path="res://style/Normal.tres" id="3_svshx"]
+[ext_resource type="AudioStream" uid="uid://bnep5gsq7j227" path="res://Assets/Sons/click_003.ogg" id="4_158mb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_158mb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqv0s"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+bg_color = Color(0.175109, 0.391529, 0.211175, 0.964706)
+border_width_bottom = 4
+border_color = Color(0.145098, 0.309804, 0.176471, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wwsa2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jsrd8"]
 
 [node name="Menu" type="HBoxContainer"]
 anchors_preset = 15
@@ -43,14 +66,15 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 9
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_c3a5m")
+theme_override_font_sizes/font_size = 50
 text = "l_movimento"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
-anchors_preset = -1
+anchors_preset = 10
 anchor_right = 1.0
 offset_top = 16.0
 offset_bottom = 144.0
@@ -58,7 +82,8 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 9
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("2_c3a5m")
+theme_override_font_sizes/font_size = 50
 text = "l_game"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -74,25 +99,53 @@ alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_c3a5m")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("3_svshx")
 text = "b_start"
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_158mb")
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_c3a5m")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqv0s")
 text = "b_language"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_wwsa2")
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "credito"
+theme_override_fonts/font = ExtResource("2_c3a5m")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("3_svshx")
+text = "b_credito"
 
 [node name="VSeparator" type="VSeparator" parent="."]
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jsrd8")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -3
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.211765, 0.682353, 0.290196, 1)
+
+[node name="SonsLanguage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_158mb")
+volume_db = -17.333
+bus = &"EFFECT"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="start"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="language"]
